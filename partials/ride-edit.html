@@ -1,0 +1,26 @@
+<h3>Edit Ride</h3>
+<form>
+  <div class="form-group">
+    <label>Task Description</label>
+    <!-- TODO: Hook up this form to our JS for submitting -->
+    <input type="text" class="form-control" placeholder="Some important task"  ng-model="editTask.task"/>
+  </div>
+
+  <div class="form-group">
+    <label>Due Date</label>
+    <input type="text" class="form-control" placeholder="01/12/17" ng-model="editTask.dueDate"/>
+  </div>
+
+  <div class="form-group">
+    <label>Assigned To</label>
+    <input type="text" class="form-control" placeholder="cohort 15" ng-model="editTask.assignedTo"/>
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    <input type="text" class="form-control" placeholder="attic" ng-model="editTask.location"/>
+  </div>
+
+  <!-- TODO: bind this button to a function -->
+  <button class="btn btn-default" ng-click="editItem(editTask)">Edit</button>
+</form>
