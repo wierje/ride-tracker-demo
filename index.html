@@ -7,33 +7,40 @@
   </head>
 
   <body ng-app='Rides'>
-<!--   <div ng-controller='TopCtrl'>
- -->    <div class="container">
-    <div ng-include="'partials/navbar.html'"></div>
-      <div class="row">
-        <div class="col-md-2 col-md-8 col-md-2">
-          <div ng-view>
+    <div ng-controller='TopCtrl'>
+      <div class="container">
+        <div ng-include="'partials/navbar.html'"></div>
+        <div class="row">
+          <div class="col-md-2 col-md-8 col-md-2">
+            <div ng-view>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
-<!--   </div>
- -->    <script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js">
-    </script>
+    <script type="text/javascript" src="lib/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="lib/bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="lib/bower_components/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="/lib/bower_components/firebase/firebase.js"></script>
+    <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+    <script type="text/javascript" src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
     <script src="app/app.js"></script>
+    <!-- controllers -->
     <script src="app/controllers/TopCtrl.js"></script>
     <script src="app/controllers/NavCtrl.js"></script>
     <script src="app/controllers/rideCtrl.js"></script>
     <script src="app/controllers/LoginCtrl.js"></script>
     <script src="app/controllers/listAllCtrl.js"></script>
+    <script src="app/controllers/ItemEditCtrl.js"></script>
+    <script src="app/controllers/ItemPostCtrl.js"></script>
+    <!-- <script src="app/controllers/listAllCtrl.js"></script>factories -->
+
     <script src="app/factories/rideFactory.js"></script>
     <script src="app/factories/AuthFactory.js"></script>
     <script src="app/factories/ItemFactory.js"></script>
+    <script src="app/factories/FilterFactory.js"></script>
+
     <script src="app/values/fb-creds.js"></script>
     <script src="app/filters/conversion.js"></script>
   </body>
