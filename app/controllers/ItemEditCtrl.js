@@ -13,7 +13,7 @@ app.controller('ItemEditCtrl', function($scope, $location, $log, $routeParams, I
         });
 
     $scope.editItem = () => {
-        ItemStorage.updateItem($routeParams.itemId, $scope.newTask)
+        ItemStorage.editItem($routeParams.itemId, $scope.newTask)
             .then( (response) => {
                 $log.info("task updated", response);
                 $location.url('/rides/list');

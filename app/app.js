@@ -24,7 +24,7 @@ app.config(function($routeProvider) {
     controller: "rideCtrl"
   })
 
-  .when("/ride/edit/:", {
+  .when("/ride/edit:", {
     templateUrl: "partials/ride-edit.html",
     controller: "EditCtrl"
   })
