@@ -22,15 +22,32 @@ app.config(function($routeProvider) {
 
   .when("/ride/list", {
     templateUrl: "partials/ride-list.html",
-    controller: "rideCtrl"
+    controller: "rideCtrl",
+    resolve: {isAuth}
+
   })
 
   .when("/item/list", {
     templateUrl: "partials/item-list.html",
-    controller: "listAllCtrl"
+    controller: "listAllCtrl",
+    resolve: {isAuth}
   })
 
-  .when("/ride/edit:", {
+  .when("/ride/detail/:itemId", {
+    templateUrl: "partials/ride-detail.html",
+    controller: "ItemViewCtrl",
+    resolve: {isAuth}
+  })
+
+    // when("/items/view/:itemId", {
+    //   templateUrl: "partials/item-details.html",
+    //   controller: "ItemViewCtrl",
+    //   resolve: {isAuth}
+    // }).
+
+
+
+  .when("/ride/edit/:itemId", {
     templateUrl: "partials/ride-edit.html",
     controller: "ItemEditCtrl",
     resolve: {isAuth}
@@ -56,3 +73,7 @@ app.run(($location, FBCreds) => {
   firebase.initializeApp(authConfig);
 });
 
+
+
+
+// /{{item.id}}

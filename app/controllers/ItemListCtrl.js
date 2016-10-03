@@ -10,21 +10,27 @@ ItemStorage.getItemList(user)
         $scope.items = itemCollectionArr;
     });
 
-    $scope.itemDelete = (itemID)=> {
+    $scope.itemDelete = (itemID) => {
       ItemStorage.deleteItem(itemID)
       .then( (response) => {
-        ItemStorage.getItemList()
+        ItemStorage.getItemList(user)
         .then( (itemCollectionArr) => {
           $scope.items = itemCollectionArr;
         });
       });
     };
-
-  $scope.itemEditView = (itemId) => {
-
-      $location.url(`/items/list`${itemId});
+      $scope.itemEditView = (itemId) => {
+        console.log("app");
+      $location.url(`/ride/edit/${itemId}`);
 
   };
 
 });
+
+  // $scope.itemEditView = (itemId) => {
+
+  //     $location.url(`/ride/edit/${itemId}`);
+
+  // };
+
 
