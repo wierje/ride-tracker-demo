@@ -26,7 +26,7 @@ app.factory("ItemStorage", ($q, $http, FirebaseURL) => {
 
     let getSingleItem = (itemId) => {
         return $q((resolve, reject) => {
-            $http.get(`${FirebaseURL}/items/${itemId}.json`)
+            $http.get(`${FirebaseURL}/workouts/${itemId}.json`)
                 .success((itemObject) => {
                     resolve(itemObject);
                 })
@@ -37,23 +37,23 @@ app.factory("ItemStorage", ($q, $http, FirebaseURL) => {
     };
 
 
-    let postNewItem = (newItem) => {
-        return $q((resolve, reject) => {
-            $http.post(`${FirebaseURL}/items.json`,
-                    JSON.stringify(newItem))
-                .success((ObjFromFirebase) => {
-                    resolve(ObjFromFirebase);
-                })
-                .error((error) => {
-                    reject(error);
-                });
-        });
-    };
+    // let postNewItem = (newItem) => {
+    //     return $q((resolve, reject) => {
+    //         $http.post(`${FirebaseURL}/workouts.json`,
+    //                 JSON.stringify(newItem))
+    //             .success((ObjFromFirebase) => {
+    //                 resolve(ObjFromFirebase);
+    //             })
+    //             .error((error) => {
+    //                 reject(error);
+    //             });
+    //     });
+    // };
 
 
     let editItem = (itemId, newDataObj) => {
         return $q((resolve, reject) => {
-            $http.patch(`${FirebaseURL}/items/${itemId}.json`, newDataObj)
+            $http.patch(`${FirebaseURL}/workouts/${itemId}.json`, newDataObj)
                 .success((result) => resolve(result))
                 .error((error) => console.error(error.error));
         });
@@ -61,7 +61,7 @@ app.factory("ItemStorage", ($q, $http, FirebaseURL) => {
 
     let deleteItem = (itemId) => {
         return $q((resolve, reject) => {
-            $http.delete(`${FirebaseURL}/items/${itemId}.json`)
+            $http.delete(`${FirebaseURL}/workouts/${itemId}.json`)
                 .success((objFromFirebase) => {
                     resolve(objFromFirebase);
                 });
@@ -70,7 +70,7 @@ app.factory("ItemStorage", ($q, $http, FirebaseURL) => {
 
     return {
         getItemList,
-        postNewItem,
+        // postNewItem,
         deleteItem,
         getSingleItem,
         editItem

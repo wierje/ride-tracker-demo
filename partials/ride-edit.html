@@ -1,26 +1,55 @@
-<h3>Edit Ride</h3>
+<h2>Edit My Ride</h2>
+<h3>Here is where you can make changes.</h3>
+
 <form>
+
   <div class="form-group">
-    <label>Task Description</label>
+    <label>Date</label>
     <!-- TODO: Hook up this form to our JS for submitting -->
-    <input type="text" class="form-control" placeholder="Some important task"  ng-model="editTask.task"/>
+    <input type="text" class="form-control" placeholder="{{item.start_datetime}}"  ng-model="editRide.item.start_datetime"/>
   </div>
 
   <div class="form-group">
-    <label>Due Date</label>
-    <input type="text" class="form-control" placeholder="01/12/17" ng-model="editTask.dueDate"/>
+    <label>Title</label>
+    <input type="text" class="form-control" placeholder="item.name" ng-model="editRide.item.name"/>
   </div>
 
   <div class="form-group">
-    <label>Assigned To</label>
-    <input type="text" class="form-control" placeholder="cohort 15" ng-model="editTask.assignedTo"/>
+    <label>Source</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.source"/>
   </div>
 
   <div class="form-group">
-    <label>Location</label>
-    <input type="text" class="form-control" placeholder="attic" ng-model="editTask.location"/>
+    <label>Distance</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.distance"/>
+  </div>
+
+<!--   <div class="form-group">
+    <label></label>
+    <input type="text" class="form-control" placeholder="low" ng-model="editRide.urgency"/>
+  </div>
+ -->
+  <div class="form-group">
+    <label>Elapsed Time</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+  </div>
+
+  <div class="form-group">
+    <label>Avg Heart Rate</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+  </div>
+
+  <div class="form-group">
+    <label>Max Heart Rate</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+  </div>
+
+  <div class="form-group">
+    <label>Calories burned</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
   </div>
 
   <!-- TODO: bind this button to a function -->
-  <button class="btn btn-default" ng-click="editItem(editTask)">Edit</button>
+  <button class="btn btn-default" ng-click="editItem(editRide)">Edit</button>
+
 </form>
