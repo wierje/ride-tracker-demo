@@ -1,22 +1,20 @@
-'use strict';
 
-app.controller('ItemEditCtrl', function($scope, $location, $log, $routeParams, ItemStorage) {
+"use strict";
 
-    $scope.title = 'Edit Item';
-    $scope.btnText = 'Update';
-    $scope.newTask = {};
+app.controller('ItemEditCtrl',function($location, $scope, $log, $routeParams, ItemStorage){
 
-    ItemStorage.getSingleItem($routeParams.itemId)
-        .then( (response) => {
-            console.log(response);
-            $scope.editTask = response;
-        });
+  ItemStorage.getSingleItem($routeParams.itemId)
+  .then((response) =>{
+    console.log(response);
+    $scope.editTask = response;
+  });
 
-    $scope.editItem = () => {
-        ItemStorage.editItem($routeParams.itemId, $scope.newTask)
-            .then( (response) => {
-                $log.info("task updated", response);
-                $location.url('/rides/list');
-            });
-    };
+  $scope.editItem = (itemObj) => {
+    ItemStorage.editItem(itemObj.id, itemObj)
+    .then((response) =>{
+      $log.info('Task updated!', response);
+      $location.url('/ride/all');
+    });
+  };
+
 });

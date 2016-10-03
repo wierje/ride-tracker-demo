@@ -19,14 +19,21 @@ app.config(function($routeProvider) {
     templateUrl: "partials/login.html",
     controller: "LoginCtrl"
   })
+
   .when("/ride/list", {
     templateUrl: "partials/ride-list.html",
     controller: "rideCtrl"
   })
 
+  .when("/item/list", {
+    templateUrl: "partials/item-list.html",
+    controller: "listAllCtrl"
+  })
+
   .when("/ride/edit:", {
     templateUrl: "partials/ride-edit.html",
-    controller: "EditCtrl"
+    controller: "ItemEditCtrl",
+    resolve: {isAuth}
   })
 
   .when("/ride/all", {

@@ -19,9 +19,9 @@
           <td>{{item.start_datetime | date}}</td>
           <td>{{item.name}}</td>
           <td>{{item.source}}</td>
-          <td>{{item.aggregates.distance_total | distance}} km</td>
+          <td><div contenteditable="true">{{item.aggregates.distance_total | distance}} km</div></td>
           <td>{{item.aggregates.distance_total | miles}} miles</td>
-          <td>{{item.aggregates.active_time_total | minutes}} minutes</td>
+          <td><div contenteditable="true">{{item.aggregates.active_time_total | minutes}} minutes</td>
           <td>{{item.aggregates.heartrate_avg}} bpm</td>
           <td>{{item.aggregates.heartrate_max}} bpm</td>
           <td>{{item.aggregates.metabolic_energy_total | calories}}</td>
