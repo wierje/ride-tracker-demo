@@ -37,18 +37,19 @@ app.factory("ItemStorage", ($q, $http, FirebaseURL) => {
     };
 
 
-    // let postNewItem = (newItem) => {
-    //     return $q((resolve, reject) => {
-    //         $http.post(`${FirebaseURL}/workouts.json`,
-    //                 JSON.stringify(newItem))
-    //             .success((ObjFromFirebase) => {
-    //                 resolve(ObjFromFirebase);
-    //             })
-    //             .error((error) => {
-    //                 reject(error);
-    //             });
-    //     });
-    // };
+  let updateItem = (itemId, editedItem) => {
+    return $q( (resolve, reject) => {
+      $http.patch(`${FirebaseURL}/workouts/${itemId}.json`,
+        JSON.stringify(editedItem))
+      .success( (objFromFirebase) => {
+        resolve(objFromFirebase);
+      })
+      .error( (error) => {
+        reject(error);
+      });
+    });
+  };
+
 
 
     let editItem = (itemId, newDataObj) => {
@@ -73,7 +74,24 @@ app.factory("ItemStorage", ($q, $http, FirebaseURL) => {
         // postNewItem,
         deleteItem,
         getSingleItem,
-        editItem
+        editItem,
+        updateItem
     };
 
 });
+
+
+
+    // let postNewItem = (newItem) => {
+    //     return $q((resolve, reject) => {
+    //         $http.post(`${FirebaseURL}/workouts.json`,
+    //                 JSON.stringify(newItem))
+    //             .success((ObjFromFirebase) => {
+    //                 resolve(ObjFromFirebase);
+    //             })
+    //             .error((error) => {
+    //                 reject(error);
+    //             });
+    //     });
+    // };
+

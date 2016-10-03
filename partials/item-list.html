@@ -7,8 +7,13 @@
       <div class="col-xs-2">{{item.start_datetime | date}}</div>
       <div class="col-xs-1">{{item.aggregates.distance_total | miles}} miles</div>
 <!--       <div class="col-xs-1"><a ng-href="#/ride/edit/{{item.id}}">Edit</a></div>
- -->      <div class="col-xs-1"><button class="btn btn-success" ng-click="itemEditView(item.id)">Edit</button></div>
-      <div class="col-xs-1"><button class="btn btn-danger" ng-click="itemDelete(item.id)">DELETE</button></div>
+ -->
+      <div class="col-xs-1">
+      <button class="btn btn-success" ng-click="itemEditView(item.id)">Edit</button>
+      </div>
+      <div class="col-xs-1">
+      <button class="btn btn-danger" ng-click="itemDelete(item.id)">DELETE</button>
+      </div>
     </div>
   </div>
 </div>
