@@ -6,12 +6,12 @@
   <div class="form-group">
     <label>Date</label>
     <!-- TODO: Hook up this form to our JS for submitting -->
-    <input type="text" class="form-control" placeholder="{{item.start_datetime}}"  ng-model="editRide.item.start_datetime"/>
+    <input type="text" class="form-control" placeholder=""  ng-model="editRide.start_datetime | date"/>
   </div>
 
   <div class="form-group">
     <label>Title</label>
-    <input type="text" class="form-control" placeholder="item.name" ng-model="editRide.item.name"/>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.name"/>
   </div>
 
   <div class="form-group">
@@ -20,33 +20,33 @@
   </div>
 
   <div class="form-group">
-    <label>Distance</label>
-    <input type="text" class="form-control" placeholder="" ng-model="editRide.distance"/>
+    <label>Distance in km</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.aggregates.distance_total | distance"/>
   </div>
 
-<!--   <div class="form-group">
-    <label></label>
-    <input type="text" class="form-control" placeholder="low" ng-model="editRide.urgency"/>
-  </div>
- -->
   <div class="form-group">
-    <label>Elapsed Time</label>
-    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+    <label>Distance in miles</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.aggregates.distance_total | miles"/>
+  </div>
+
+  <div class="form-group">
+    <label>Elapsed time in minutes</label>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.aggregates.active_time_total | minutes"/>
   </div>
 
   <div class="form-group">
     <label>Avg Heart Rate</label>
-    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.aggregates.heartrate_avg"/>
   </div>
 
   <div class="form-group">
     <label>Max Heart Rate</label>
-    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.aggregates.heartrate_max"/>
   </div>
 
   <div class="form-group">
     <label>Calories burned</label>
-    <input type="text" class="form-control" placeholder="" ng-model="editRide."/>
+    <input type="text" class="form-control" placeholder="" ng-model="editRide.aggregates.metabolic_energy_total | calories"/>
   </div>
 
   <!-- TODO: bind this button to a function -->
