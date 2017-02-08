@@ -1,4 +1,4 @@
-"use strict";
+"esversion: 6";
 
 app.controller('TodoCtrl', function($scope, $location){
 

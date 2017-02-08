@@ -1,7 +1,7 @@
 
-"use strict";
 
 app.controller("ItemEditCtrl",function($location, $scope, $log, $routeParams, ItemStorage){
+  "esversion: 6";
 
   ItemStorage.getSingleItem($routeParams.itemId)
   .then((response) =>{
