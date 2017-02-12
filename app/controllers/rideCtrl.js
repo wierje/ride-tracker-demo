@@ -18,7 +18,7 @@ app.controller("rideCtrl", function ($scope, $q, $http, rideFactory, $location, 
     $http.post(`${FirebaseURL}/workouts.json`,
       JSON.stringify($scope.rides._embedded.workouts[0]))
     .success( (ObjFromFirebase) => {
-      $location.url("/ride/all");
+      $location.url("/item/list");
       console.log(ObjFromFirebase);
       resolve(ObjFromFirebase);
     })
