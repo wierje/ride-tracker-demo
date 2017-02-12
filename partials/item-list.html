@@ -1,0 +1,19 @@
+<h1>Ride List</h1>
+<div ng-repeat="item in workouts | filter: {task: searchText.search}">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="col-xs-1"><input type="checkbox" name=""/></div>
+      <div class="col-xs-6"><a ng-href="#/ride/detail/{{item.id}}">{{item.name}}</a></div>
+      <div class="col-xs-2">{{item.start_datetime | date}}</div>
+      <div class="col-xs-1">{{item.aggregates.distance_total | miles}} miles</div>
+<!--       <div class="col-xs-1"><a ng-href="#/ride/edit/{{item.id}}">Edit</a></div>
+ -->
+      <div class="col-xs-1">
+      <button class="btn btn-success" ng-click="itemEditView(item.id)">Edit</button>
+      </div>
+      <div class="col-xs-1">
+      <button class="btn btn-danger" ng-click="itemDelete(item.id)">DELETE</button>
+      </div>
+    </div>
+  </div>
+</div>

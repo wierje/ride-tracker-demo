@@ -1,13 +1,14 @@
 <h2>Ride Details</h2>
 
-<h3>Date: {{item.start_datetime | date}}</h3>
-<h3>Title: {{item.name}}</h3>
-<h3>Source: {{item.source}}</h3>
-<h3>Distance: {{item.aggregates.distance_total | distance}} km</h3>
-<h3>Distance: {{item.aggregates.distance_total | miles}} miles</h3>
-<h3>Time: {{item.aggregates.active_time_total | minutes}} minutes</h3>
-<h3>Avg Heart Rate: {{item.aggregates.heartrate_avg}} bpm</h3>
-<h3>Max Heart Rate: {{item.aggregates.heartrate_max}} bpm</h3>
-<h3>Calories burned: {{item.aggregates.metabolic_energy_total | calories}}</h3>
+<h3>Date: {{workouts[0].start_datetime | date}}</h3>
+<h3>Title: {{workouts[0].name}}</h3>
+<h3>Source: {{workouts[0].source}}</h3>
+<h3>Distance: {{workouts[0].aggregates.distance_total | distance}} km</h3>
+<h3>Distance: {{workouts[0].aggregates.distance_total | miles}} miles</h3>
+<h3>Time: {{workouts[0].aggregates.active_time_total | minutes}} minutes</h3>
+<h3>Avg Heart Rate: {{workouts[0].aggregates.heartrate_avg}} bpm</h3>
+<h3>Max Heart Rate: {{workouts[0].aggregates.heartrate_max}} bpm</h3>
+<h3>Calories burned: {{workouts[0].aggregates.metabolic_energy_total | calories}}</h3>
 
-<button class='btn btn-info'><a ng-href="#items/edit/:{{item.id}}">Edit</a></button>
+<!-- <button class='btn btn-info'><a ng-href="#items/edit/:{{workouts[0].id}}">Edit</a></button>
+ -->
