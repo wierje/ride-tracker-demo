@@ -1,6 +1,9 @@
 'use strict';
 
-var app = angular.module('Rides', ["ngRoute"])
+var app = angular.module('Rides', [
+    "ngRoute",
+    "mgcrea.ngStrap"
+  ])
   .constant("FirebaseURL", "https://my-ride-tracker.firebaseio.com");
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
