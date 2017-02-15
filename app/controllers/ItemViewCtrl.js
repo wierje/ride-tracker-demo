@@ -1,6 +1,7 @@
-'esversion: 6';
+"esversion: 6";
 
-app.controller('ItemViewCtrl', function($scope, ItemStorage, $routeParams) {
+app.controller("ItemViewCtrl", function($scope, ItemStorage, $routeParams) {
+  "use strict";
   $scope.workouts = [];
 
   ItemStorage.getItemList($scope.$parent.getUser())

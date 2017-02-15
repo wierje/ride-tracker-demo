@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("listAllCtrl", function ($scope, $location, ItemStorage, FirebaseURL) {
+app.controller("listAllCtrl", function ($scope, $location, ItemStorage) {
 
   ItemStorage.getItemList()
   .then( (itemCollectionArray) => {
@@ -25,4 +25,3 @@ app.controller("listAllCtrl", function ($scope, $location, ItemStorage, Firebase
 
   };
 });
-
