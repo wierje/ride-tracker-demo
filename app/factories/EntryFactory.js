@@ -2,18 +2,21 @@
 
 app.factory("EntryFactory", ($q, $http) => {
 
-  let getRides = function() {
+  let getRide = function() {
     return $q((resolve, reject) => {
       $http.get('../../data/entryForm.json')
-      .success((ridesObject) => {
-        resolve (ridesObject);
-      })
-      .error((error) => {
-        reject(error);
-      });
-   });
+        .success((ridesObject) => {
+          resolve(ridesObject);
+        })
+        .error((error) => {
+          reject(error);
+          console.log("something went wrong");
+        });
+    });
   };
 
-  return {getRides};
+  return {
+    getRide
+  };
 
 });

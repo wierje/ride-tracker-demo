@@ -8,7 +8,7 @@ var app = angular.module('Rides', [
 
 let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
   if (AuthFactory.isAuthenticated()) {
-    console.log("auth user");
+    console.log("is auth user");
     resolve();
   } else {
     console.log("not auth user");
@@ -26,26 +26,19 @@ app.config(function($routeProvider) {
   .when("/ride/list", {
     templateUrl: "partials/ride-list.html",
     controller: "rideCtrl",
-    resolve: {
-      isAuth
-    }
-
+    resolve: {isAuth}
   })
 
   .when("/item/list", {
     templateUrl: "partials/item-list.html",
     controller: "listAllCtrl",
-    resolve: {
-      isAuth
-    }
+    resolve: {isAuth}
   })
 
   .when("/ride/detail/:itemId", {
     templateUrl: "partials/ride-detail.html",
     controller: "ItemViewCtrl",
-    resolve: {
-      isAuth
-    }
+    resolve: {isAuth}
   })
 
   // .when("/manual/entry", {
@@ -60,17 +53,13 @@ app.config(function($routeProvider) {
   .when("/ride/edit/:itemId", {
     templateUrl: "partials/ride-edit.html",
     controller: "ItemEditCtrl",
-    resolve: {
-      isAuth
-    }
+    resolve: {isAuth}
   })
 
   .when("/ride/all", {
       templateUrl: "partials/ride-all.html",
       controller: "listAllCtrl",
-      resolve: {
-        isAuth
-      }
+      resolve: {isAuth}
     })
     .otherwise("/");
 
