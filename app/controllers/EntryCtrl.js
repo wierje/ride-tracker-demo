@@ -1,7 +1,7 @@
 "esversion: 6";
 
 
-app.controller("ItemEditCtrl",function($location, $scope, $log, $routeParams, ItemStorage){
+app.controller("EntryCtrl",function($location, $scope, $log, $routeParams, ItemStorage){
 
   "use strict";
   ItemStorage.getSingleItem($routeParams.itemId)
@@ -11,7 +11,7 @@ app.controller("ItemEditCtrl",function($location, $scope, $log, $routeParams, It
   });
 
   $scope.editItem = (itemObj) => {
-    console.log(itemObj(name), itemObj);
+    console.log(itemObj.id);
     ItemStorage.editItem(itemObj.id, itemObj)
     .then((response) =>{
       $log.info("Ride updated!", response);

@@ -1,11 +1,14 @@
 'use strict';
 
-var app = angular.module('Rides', ["ngRoute"])
-.constant("FirebaseURL", "https://my-ride-tracker.firebaseio.com");
+var app = angular.module('Rides', [
+    "ngRoute",
+    "mgcrea.ngStrap"
+  ])
+  .constant("FirebaseURL", "https://my-ride-tracker.firebaseio.com");
 
-let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
+let isAuth = (AuthFactory) => new Promise((resolve, reject) => {
   if (AuthFactory.isAuthenticated()) {
-    console.log("auth user");
+    console.log("is auth user");
     resolve();
   } else {
     console.log("not auth user");
@@ -15,7 +18,7 @@ let isAuth = (AuthFactory) => new Promise( (resolve, reject) => {
 
 app.config(function($routeProvider) {
   $routeProvider.
-    when("/", {
+  when("/", {
     templateUrl: "partials/login.html",
     controller: "LoginCtrl"
   })
@@ -24,7 +27,6 @@ app.config(function($routeProvider) {
     templateUrl: "partials/ride-list.html",
     controller: "rideCtrl",
     resolve: {isAuth}
-
   })
 
   .when("/item/list", {
@@ -39,12 +41,13 @@ app.config(function($routeProvider) {
     resolve: {isAuth}
   })
 
-    // when("/items/view/:itemId", {
-    //   templateUrl: "partials/item-details.html",
-    //   controller: "ItemViewCtrl",
-    //   resolve: {isAuth}
-    // }).
-
+  // .when("/manual/entry", {
+  //   templateUrl: "partials/manual-entry.html",
+  //   // controller: "ManualCtrl",
+  //   resolve: {
+  //     isAuth
+  //   }
+  // })
 
 
   .when("/ride/edit/:itemId", {
@@ -54,11 +57,11 @@ app.config(function($routeProvider) {
   })
 
   .when("/ride/all", {
-    templateUrl: "partials/ride-all.html",
-    controller: "listAllCtrl",
-    resolve: {isAuth}
-  })
-  .otherwise("/");
+      templateUrl: "partials/ride-all.html",
+      controller: "listAllCtrl",
+      resolve: {isAuth}
+    })
+    .otherwise("/");
 
 });
 

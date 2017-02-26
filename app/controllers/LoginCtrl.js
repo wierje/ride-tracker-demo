@@ -32,7 +32,7 @@ $scope.login = () => {
   } else {
     $window.location.href = '#/login';
     }
-        console.log("data from login ", data);
+        console.log("data from login");
   }, (error) => {
     console.log('error', error);
   });

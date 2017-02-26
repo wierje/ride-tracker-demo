@@ -2,6 +2,7 @@
 
 app.controller('TodoCtrl', function($scope, $location){
 
+  "use strict";
   $scope.newTask = {};
 
   // $scope.newItem = function(){

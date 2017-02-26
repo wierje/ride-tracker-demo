@@ -1,10 +1,9 @@
 {
   "name": "lib",
-
   "authors": [
     "wierje <wier.je@gmail.com>"
   ],
-    "description": "",
+  "description": "",
   "main": "",
   "moduleType": [],
   "license": "MIT",
@@ -22,6 +21,7 @@
     "angularfire": "^2.0.1",
     "bootstrap": "^3.3.6",
     "firebase": "^3.2.0",
-    "jquery": "^3.1.0"
+    "jquery": "^3.1.0",
+    "angular-strap": "^2.3.12"
   }
 }
