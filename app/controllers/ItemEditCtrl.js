@@ -11,7 +11,7 @@ app.controller("ItemEditCtrl",function($location, $scope, $log, $routeParams, It
   });
 
   $scope.editItem = (itemObj) => {
-    console.log(itemObj.uid, itemObj);
+    console.log(itemObj(name), itemObj);
     ItemStorage.editItem(itemObj.id, itemObj)
     .then((response) =>{
       $log.info("Ride updated!", response);
