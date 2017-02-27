@@ -5,7 +5,7 @@ app.controller("ItemEditCtrl",function($location, $scope,  $routeParams, $log, I
   'use strict';
   $scope.title = 'Edit Item';
   $scope.btnText = 'Save';
-  $scope.newTask = {};
+  // $scope.newTask = {};
 
   ItemStorage.getSingleItem($routeParams.itemId)
   .then((response) => {
@@ -15,7 +15,7 @@ app.controller("ItemEditCtrl",function($location, $scope,  $routeParams, $log, I
 
   $scope.addNewItem = () => {
     console.log($routeParams.itemId);
-    ItemStorage.updateItem($routeParams.itemId, $scope.newTask)
+    ItemStorage.updateItem($routeParams.itemId, $scope.editRide)
     .then((response) => {
       $log.info("Ride updated!", response);
       $location.url("/ride/all");
