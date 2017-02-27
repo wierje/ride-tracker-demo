@@ -1,22 +1,24 @@
 "esversion: 6";
 
 
-app.controller("ItemEditCtrl",function($location, $scope, $log, $routeParams, ItemStorage){
+app.controller("ItemEditCtrl",function($location, $scope,  $routeParams, $log, ItemStorage){
+  'use strict';
+  $scope.title = 'Edit Item';
+  $scope.btnText = 'Save';
+  $scope.newTask = {};
 
-  "use strict";
   ItemStorage.getSingleItem($routeParams.itemId)
-  .then((response) =>{
+  .then((response) => {
     console.log(response);
     $scope.editRide = response;
   });
 
-  $scope.editItem = (itemObj) => {
-    console.log(itemObj(name), itemObj);
-    ItemStorage.editItem(itemObj.id, itemObj)
-    .then((response) =>{
+  $scope.addNewItem = () => {
+    console.log($routeParams.itemId);
+    ItemStorage.updateItem($routeParams.itemId, $scope.newTask)
+    .then((response) => {
       $log.info("Ride updated!", response);
       $location.url("/ride/all");
     });
   };
-
 });

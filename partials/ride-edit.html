@@ -1,7 +1,7 @@
 <div class="container">
 <h2>Edit My Ride</h2>
 <h3>Here is where you can make changes.</h3>
-  <form>
+  <form ng-controller="ItemEditCtrl" ng-submit="addNewItem()">
 
     <div class="form-group">
       <label>Date</label>
@@ -50,7 +50,7 @@
     </div>
 
     <!-- TODO: bind this button to a function -->
-    <button class="btn btn-default" ng-click="editItem(editRide)">Save</button>
+    <button class="btn btn-default" ng-click="addNewItem()">{{btnText}}</button>
 
   </form>
 </div>
